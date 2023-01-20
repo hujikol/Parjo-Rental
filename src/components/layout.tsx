@@ -4,7 +4,7 @@ const Layout = (props: { children: any }) => {
   const children = props.children;
   return (
     <div>
-      <main className='container mx-auto h-screen'>{children}</main>
+      <main className='container mx-auto mt-48 h-screen'>{children}</main>
     </div>
   );
 };

@@ -9,14 +9,16 @@ const IndexPage = () => {
       <header className='h-96 bg-scale-down md:bg-contain bg-fixed bg-top header-img'>
         <div
           className='flex items-center justify-center h-96
-                      font-bold text-4xl text-white
+                      font-bold text-4xl text-white text-center
                      bg-black bg-opacity-30 bg-cover backdrop-blur-sm'
         >
           Tempatnya Rental Motor Jogja
         </div>
       </header>
       <Layout>
-        <p>sebuah paragraf</p>
+        <div className='font-bold text-4xl text-blue-700 text-center'>
+          Kenapa Harus Rental di Tempat Kami?
+        </div>
       </Layout>
     </>
   );
