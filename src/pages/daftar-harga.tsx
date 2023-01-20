@@ -1,11 +1,15 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Navbar from "../components/navbar";
 
 const DaftarHarga = () => {
   return (
-    <Layout>
-      <h1>Hi, welcome to daftar harga!</h1>
-    </Layout>
+    <>
+      <Navbar />
+      <Layout>
+        <h1>Hi, welcome to daftar harga!</h1>
+      </Layout>
+    </>
   );
 };
 

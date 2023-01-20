@@ -1,12 +1,10 @@
 import * as React from "react";
-import Navbar from "./navbar";
 
 const Layout = (props: { children: any }) => {
   const children = props.children;
   return (
     <div>
-      <Navbar />
-      <main>{children}</main>
+      <main className='container mx-auto h-screen'>{children}</main>
     </div>
   );
 };

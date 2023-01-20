@@ -1,11 +1,15 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Navbar from "../components/navbar";
 
 const Ketentuan = () => {
   return (
-    <Layout>
-      <h1>Hi, welcome to Ketentuan!</h1>
-    </Layout>
+    <>
+      <Navbar />
+      <Layout>
+        <h1>Hi, welcome to Ketentuan!</h1>
+      </Layout>
+    </>
   );
 };
 
