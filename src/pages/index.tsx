@@ -1,6 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
+import Card from "../components/card";
 
 const IndexPage = () => {
   return (
@@ -16,9 +17,14 @@ const IndexPage = () => {
         </div>
       </header>
       <Layout>
-        <div className='font-bold text-4xl text-blue-700 text-center'>
-          Kenapa Harus Rental di Tempat Kami?
-        </div>
+        <section>
+          <div>
+            <h2 className='font-bold text-4xl text-blue-700 text-center'>
+              Kenapa Harus Rental di Tempat Kami?
+            </h2>
+          </div>
+          {/* <Card /> */}
+        </section>
       </Layout>
     </>
   );
