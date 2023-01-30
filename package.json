@@ -8,13 +8,13 @@
     "gatsby"
   ],
   "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
