@@ -1,9 +1,28 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
-import Card from "../components/card";
+import { graphql } from "gatsby";
 
-const IndexPage = () => {
+interface tipe {
+  nodes: {
+    [x: string]: any;
+    id: string;
+    tittle: string;
+    desc: string;
+    image: any;
+  };
+}
+interface Props {
+  data: {
+    allBenefitYaml: tipe;
+    allFacilityYaml: tipe;
+  };
+}
+
+const IndexPage: React.FC<Props> = ({ data }) => {
+  const benefit = data.allBenefitYaml.nodes;
+  const facility = data.allFacilityYaml.nodes;
+
   return (
     <>
       <Navbar />
@@ -17,13 +36,41 @@ const IndexPage = () => {
         </div>
       </header>
       <Layout>
-        <section>
+        <section className='mb-8'>
           <div>
             <h2 className='font-bold text-4xl text-blue-700 text-center'>
               Kenapa Harus Rental di Tempat Kami?
             </h2>
           </div>
-          {/* <Card /> */}
+        </section>
+        <section className='flex flex-row p-4 justify-center'>
+          {benefit.map(
+            (benefits: {
+              id: any;
+              image: any;
+              title: string;
+              description: string;
+            }) => (
+              <div
+                className='flex flex-col items-center justify-center w-3/12 mx-8'
+                key={benefits.id}
+              >
+                <div>
+                  <img
+                    className='object-fill max-w-48 max-h-48'
+                    src={benefits.image}
+                    alt={benefits.title}
+                  />
+                </div>
+                <div className='text-center'>
+                  <h3 className='font-bold text-lg mt-3 mb-1'>
+                    {benefits.title}
+                  </h3>
+                  <p>{benefits.description}</p>
+                </div>
+              </div>
+            )
+          )}
         </section>
       </Layout>
     </>
@@ -33,3 +80,24 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <title>Home Page</title>;
+
+export const query = graphql`
+  query content {
+    allBenefitYaml {
+      nodes {
+        id
+        title
+        description
+        image
+      }
+    }
+    allFacilityYaml {
+      nodes {
+        id
+        title
+        description
+        image
+      }
+    }
+  }
+`;
