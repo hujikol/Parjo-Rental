@@ -36,9 +36,9 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         </div>
       </header>
       <Layout>
-        <section className='mb-8'>
+        <section className='py-8 '>
           <div>
-            <h2 className='font-bold text-4xl text-blue-700 text-center'>
+            <h2 className='font-bold text-5xl text-blue-700 text-center'>
               Kenapa Harus Rental di Tempat Kami?
             </h2>
           </div>
@@ -52,12 +52,12 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               description: string;
             }) => (
               <div
-                className='flex flex-col items-center justify-center w-3/12 mx-8'
+                className='flex flex-col items-center w-3/12 mx-8'
                 key={benefits.id}
               >
                 <div>
                   <img
-                    className='object-fill max-w-48 max-h-48'
+                    className='object-fill max-w-72 max-h-72 rounded'
                     src={benefits.image}
                     alt={benefits.title}
                   />
@@ -67,6 +67,42 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                     {benefits.title}
                   </h3>
                   <p>{benefits.description}</p>
+                </div>
+              </div>
+            )
+          )}
+        </section>
+        <section className='mt-52 py-8'>
+          <div>
+            <h2 className='font-bold text-5xl text-blue-700 text-center'>
+              Fasilitas Rental
+            </h2>
+          </div>
+        </section>
+        <section className='flex flex-row p-4 justify-center'>
+          {facility.map(
+            (facility: {
+              id: any;
+              image: any;
+              title: string;
+              description: string;
+            }) => (
+              <div
+                className='flex flex-col items-center w-3/12 mx-8'
+                key={facility.id}
+              >
+                <div>
+                  <img
+                    className='object-fill max-w-72 max-h-72 rounded'
+                    src={facility.image}
+                    alt={facility.title}
+                  />
+                </div>
+                <div className='text-center'>
+                  <h3 className='font-bold text-lg mt-3 mb-1'>
+                    {facility.title}
+                  </h3>
+                  <p>{facility.description}</p>
                 </div>
               </div>
             )
