@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import { graphql } from "gatsby";
+import Footer from "../components/footer";
 
 interface tipe {
   nodes: {
@@ -108,7 +109,16 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             )
           )}
         </section>
+        <section className='mt-52 py-8'>
+          <div>
+            <h2 className='font-bold text-5xl text-blue-700 text-center'>
+              Banyak Pelanggan yang Puas!
+            </h2>
+          </div>
+          <div className='items-center text-center'>slide show disini</div>
+        </section>
       </Layout>
+      <Footer />
     </>
   );
 };
